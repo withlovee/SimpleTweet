@@ -37,24 +37,27 @@
             android:layout_toRightOf="@+id/ivProfilePicture"
             android:layout_toEndOf="@+id/ivProfilePicture">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:id="@+id/tvName"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/tvName"
-                android:layout_below="@+id/tvName"
-                android:layout_alignLeft="@+id/tvName"
-                android:layout_alignStart="@+id/tvName" />
         </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/tvName"
+            android:textStyle="bold"
+            android:text="name-top"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/ivProfilePicture"
+            android:layout_toEndOf="@+id/ivProfilePicture" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvUsername"
+            android:text="name"
+            android:layout_below="@+id/tvName"
+            android:layout_toRightOf="@+id/ivProfilePicture"
+            android:layout_toEndOf="@+id/ivProfilePicture" />
     </RelativeLayout>
 
     <EditText

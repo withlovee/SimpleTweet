@@ -1,24 +1,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.codepath.apps.simpletweet.TimelineActivity">
-    <android.support.v4.widget.SwipeRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/swipeContainer"
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/timeline_tabs"
+        app:pstsShouldExpand="true"
+        app:pstsTextAllCaps="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="48dp">
+    </com.astuetz.PagerSlidingTabStrip>
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lvTweets"
-            android:background="@color/icons"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/timeline_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_below="@+id/timeline_tabs" />
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <!--FrameLayout
+        android:id="@+id/flContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" /-->
+    <!--fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.codepath.apps.simpletweet.fragments.TweetsListFragment"
+        android:id="@+id/fragment_timeline"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        tools:layout="@layout/fragment_tweets_list"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" /-->
 </RelativeLayout>

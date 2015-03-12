@@ -2,6 +2,9 @@ package com.codepath.apps.simpletweet;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +14,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.codepath.apps.simpletweet.fragments.HomeTimelineFragment;
+import com.codepath.apps.simpletweet.fragments.MentionTimelineFragment;
 import com.codepath.apps.simpletweet.models.Tweet;
 import com.codepath.apps.simpletweet.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -56,7 +61,7 @@ public class TweetActivity extends ActionBarActivity {
     private void setupViews() {
         etTweet = (EditText) findViewById(R.id.etTweet);
         TextView tvName = (TextView) findViewById(R.id.tvName);
-        TextView tvUsername = (TextView) findViewById(R.id.tvName);
+        TextView tvUsername = (TextView) findViewById(R.id.tvUsername);
         RoundedImageView ivProfilePicture = (RoundedImageView) findViewById(R.id.ivProfilePicture);
 
         tvName.setText(owner.getName());
@@ -102,4 +107,5 @@ public class TweetActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

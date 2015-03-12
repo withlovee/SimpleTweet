@@ -31,6 +31,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/tvBody"
+        android:autoLink="web"
         android:layout_below="@+id/tvTweetName"
         android:layout_toRightOf="@+id/ivProfileImage"
         android:layout_alignParentRight="true"
