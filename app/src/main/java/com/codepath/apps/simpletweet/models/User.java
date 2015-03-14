@@ -13,6 +13,11 @@ public class User implements Serializable {
     private long uid;
     private String screenName;
     private String profileImageUrl;
+    private int followersCount;
+    private String tagline;
+
+
+    private int followingCount;
 
     public String getName() {
         return name;
@@ -30,6 +35,18 @@ public class User implements Serializable {
         return profileImageUrl;
     }
 
+    public String getTagline() {
+        return tagline;
+    }
+
+    public int getFollowersCount() {
+        return followersCount;
+    }
+
+    public int getFollowingCount() {
+        return followingCount;
+    }
+
     public static User fromJSON(JSONObject json) {
         User u = new User();
         try {
@@ -37,6 +54,10 @@ public class User implements Serializable {
             u.uid = json.getLong("id");
             u.screenName = json.getString("screen_name");
             u.profileImageUrl = json.getString("profile_image_url");
+            u.followersCount = json.getInt("followers_count");
+            u.followingCount = json.getInt("friends_count");
+            u.tagline = json.getString("description");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

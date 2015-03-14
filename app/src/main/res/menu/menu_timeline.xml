@@ -2,6 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.codepath.apps.simpletweet.TimelineActivity">
-    <item android:id="@+id/action_tweet" android:title="Tweet"
+    <item android:id="@+id/action_profile"
+        android:title="Profile"
+        android:icon="@mipmap/ic_user"
+        android:orderInCategory="100" app:showAsAction="always" />
+    <item android:id="@+id/action_tweet"
+        android:title="Tweet"
+        android:icon="@mipmap/ic_write"
         android:orderInCategory="100" app:showAsAction="always" />
 </menu>

@@ -4,32 +4,17 @@ package com.codepath.apps.simpletweet;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 
 import android.content.Intent;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListView;
-
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.simpletweet.fragments.HomeTimelineFragment;
 import com.codepath.apps.simpletweet.fragments.MentionTimelineFragment;
-import com.codepath.apps.simpletweet.fragments.TweetsListFragment;
-import com.codepath.apps.simpletweet.models.Tweet;
-import com.loopj.android.http.JsonHttpResponseHandler;
-
-import org.apache.http.Header;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 
 public class TimelineActivity extends ActionBarActivity {
     private final String TAG = getClass().getSimpleName().toString();
@@ -45,13 +30,6 @@ public class TimelineActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setLogo(R.drawable.ic_action_twitter);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
-
-        // This is how we roll a simple fragment
-        // fragmentTweetsList = new TweetsListFragment();
-        // FragmentManager fm = getSupportFragmentManager();
-        // FragmentTransaction ft = fm.beginTransaction();
-        // ft.replace(R.id.flContainer, fragmentTweetsList);
-        // ft.commit();
 
         homeTimelineFragment = new HomeTimelineFragment();
         mentionTimelineFragment = new MentionTimelineFragment();
@@ -94,10 +72,14 @@ public class TimelineActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_tweet) {
             Intent i = new Intent(TimelineActivity.this, TweetActivity.class);
             startActivityForResult(i, TWEET_PAGE);
+            return true;
+        }
+        else if (id == R.id.action_profile) {
+            Intent i = new Intent(TimelineActivity.this, ProfileActivity.class);
+            startActivity(i);
             return true;
         }
 
@@ -105,7 +87,6 @@ public class TimelineActivity extends ActionBarActivity {
     }
 
     public class TweetsPagerAdapter extends FragmentPagerAdapter {
-        final int PAGE_COUNT = 2;
         private String tabTitles[] = {"Home", "Mentions"};
 
         public TweetsPagerAdapter(FragmentManager fm) {

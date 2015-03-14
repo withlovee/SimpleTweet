@@ -1,15 +1,12 @@
 package com.codepath.apps.simpletweet.fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -20,14 +17,10 @@ import com.codepath.apps.simpletweet.TweetsArrayAdapter;
 import com.codepath.apps.simpletweet.TwitterApplication;
 import com.codepath.apps.simpletweet.TwitterClient;
 import com.codepath.apps.simpletweet.models.Tweet;
-import com.loopj.android.http.JsonHttpResponseHandler;
 
-import org.apache.http.Header;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by vee on 3/9/15.
@@ -40,11 +33,6 @@ public abstract class TweetsListFragment extends Fragment {
     private ListView lvTweets;
     protected long lastId = 0;
     private SwipeRefreshLayout swipeContainer;
-
-    /*public static TweetsListFragment newInstance(String screenName) {
-        TweetsListFragment tweetsListFragment = new TweetsListFragment();
-        Bundle args = new Bundle();
-    }*/
 
     // is called first
     @Override
