@@ -10,4 +10,5 @@
     <color name="divider">#B6B6B6</color>
     <color name="light_bg">#f5f8fa</color>
     <color name="light_line">#e1e8ed</color>
+    <color name="transparent">#00000000</color>
 </resources>

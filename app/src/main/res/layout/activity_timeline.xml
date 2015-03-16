@@ -13,9 +13,12 @@
         android:layout_height="48dp"
         app:pstsShouldExpand="true"
         app:pstsTextAllCaps="true"
+        app:pstsIndicatorHeight="2dp"
+        app:pstsTabBackground="@drawable/tab_bg"
         app:pstsIndicatorColor="@color/primary"
+        app:pstsUnderlineHeight="1dp"
         app:pstsUnderlineColor="@color/light_line"
-        app:pstsTabBackground="@color/light_bg">
+        >
     </com.astuetz.PagerSlidingTabStrip>
 
     <android.support.v4.view.ViewPager
